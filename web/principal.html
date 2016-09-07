@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>..::Menu Principal::..</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/estilo01.css" />
+  <link rel="stylesheet" href="css/estilo03.css" />
+  <link rel="stylesheet" href="css/estiloBuscar.css" />
+</head>
+<body>
+
+  <!-- cabecera -->
+  <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/269px-English_Pok%C3%A9mon_logo.svg.png"/>
+      <!-- Buscador -->
+      <div id="buscador">
+          <form action="buscador" method="get">
+              <fieldset> <!-- Agrupa items relacionados -->
+                <legend>Buscador</legend> <!-- leged es el CAPTION para fieldset -->
+                  <input type="search" id="busqueda" size="30" placeholder="nombre del Pokemon"/>
+                  <div id="resultados"></div>
+              </fieldset>
+          </form>
+
+      </div> <!-- /buscador -->
+
+      <nav>
+           <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+           </ul>
+      </nav>
+  </header>
+
+  <!-- Pie de página -->
+  <footer>
+      <p id="copyright">&copy; 2016 By Dark Side</p>
+  </footer> <!-- /pie de página -->
+
+  <script src="js/buscar.js" ></script>
+</body>
+</html>

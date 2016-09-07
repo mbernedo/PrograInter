@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>..::Pagina de Bienvenida::..</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/estilo01.css" />
+  <link rel="stylesheet" href="css/estiloBuscar.css" />
+  <script src="buscar.js" type="text/javascript"></script>
+</head>
+<body>
+
+<!--
+  The <div> tag defines a division or a section in an HTML document.
+  The <div> tag is used to group block-elements to format them with CSS.
+  -->
+<!-- cabecera -->
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/269px-English_Pok%C3%A9mon_logo.svg.png"/>
+    <!-- Buscador -->
+    <div id="buscador">
+        <form action="js02.html" method="get">
+            <fieldset> <!-- Agrupa items relacionados -->
+              <legend>Buscador</legend> <!-- leged es el CAPTION para fieldset -->
+                <input type="search" id="busqueda" name="poke" size="30" placeholder="nombre del Pokemon"/>
+                <div id="resultados"></div>
+            </fieldset>
+        </form>
+
+    </div> <!-- /buscador -->
+</header>
+
+<article>
+  <header>
+    <h1>Programación Internet 2016-II</h1>
+  </header>
+<!-- cuerpo lado izquierdo -->
+<section>
+  <fieldset> <!-- Agrupa items relacionados -->
+    <legend>Sumilla del Curso</legend>
+    <p>
+      La asignatura pertenece al área de Ingeniería de Software y es de carácter teórico-práctico.
+      En ésta, se enseña al estudiante los conceptos, técnicas, modelos y herramientas que posibilitan
+       la implementación de aplicaciones empresariales de alta complejidad utilizando lenguajes de programación,
+       patrones de diseño, tecnologías emergentes y ambientes (frameworks) de productividad que permiten la
+       construcción de soluciones web y su integración a otros sistemas a través de servicios web reutilizables.
+       La asignatura comprende los siguientes temas: Fundamentos de aplicaciones web, servidores de aplicaciones
+       y servidores web, frameworks de productividad, patrones de diseño y estilos arquitectónicos, acceso a base
+        de datos, tópicos avanzados de implementación de aplicaciones web.
+    </p>
+  </fieldset>
+</section>
+<!-- cuerpo lado derecho -->
+<aside>
+  <form action="principal.html" method="GET">
+    <fieldset>
+      <legend>Ingrese sus Credenciales:</legend>
+      <ul>
+        <li>
+          <label class="titulo" for="email">Correo electronico</label>
+
+          <div>
+            <span> <!-- Se usa para agrupar elementos in-Line en el documento -->
+              <input type="email" id="email" name="email" value="" required/>
+            </span>
+          </div>
+        </li>
+        <li>
+          <label class="titulo" for="password">Clave</label>
+
+          <div>
+            <span>
+              <input type="password" id="password" name="password" value="" required/>
+            </span>
+          </div>
+        </li>
+
+      </ul>
+
+      <br><br>
+      <input type="reset" value="Limpiar">
+      <input type="submit" value="OK">
+      <p>Si no tiene usuario registrese <a href="registro.html">aqui</a>
+    </fieldset>
+</form>
+</aside>
+
+</article>
+  <!-- Pie de página -->
+  <footer>
+      <p id="copyright">&copy; 2016 By Dark Side</p>
+  </footer> <!-- /pie de página -->
+
+
+  <script src="js/buscar.js" ></script>
+</body>
+</html>

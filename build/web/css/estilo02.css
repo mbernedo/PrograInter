@@ -1,0 +1,40 @@
+article {
+  background: #FFF;
+  border: 1px solid silver;
+  margin: 0 5px;
+  width : 100%;
+}
+
+section {
+  display : inline;
+  float: left;
+  width: 60%;
+  margin-top: 15px;
+  padding:15 0 0 0;
+  background: #FFF;
+}
+
+aside {
+  position: relative;
+  float: left;
+  width: 40%;
+  margin: 15 0 0 0;
+  padding: 0;
+}
+
+/* Para mostrar en formato de tabla */
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
+
+
+div.no-html5-video{
+	height: 20px;
+	text-align: center;
+	color: #000090;
+	font-size: 13px;
+	font-style: italic;
+	font-weight: bold ;
+	background-color: #99f;
+}

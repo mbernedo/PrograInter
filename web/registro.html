@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>..::Pagina de Registro::..</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/estilo01.css" />
+  <link rel="stylesheet" href="css/estilo02.css" />
+  <link rel="stylesheet" href="css/estiloBuscar.css" />
+</head>
+<body>
+
+  <!-- cabecera -->
+  <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/269px-English_Pok%C3%A9mon_logo.svg.png"/>
+      <!-- Buscador -->
+      <div id="buscador">
+          <form action="buscador" method="get">
+              <fieldset> <!-- Agrupa items relacionados -->
+                <legend>Buscador</legend> <!-- leged es el CAPTION para fieldset -->
+                  <input type="search" id="busqueda" size="30" placeholder="nombre del Pokemon"/>
+                  <div id="resultados"></div>
+              </fieldset>
+          </form>
+
+      </div> <!-- /buscador -->
+  </header>
+
+<article>
+  <section>
+    <form method="post" action="#">
+      <p>
+        <label for="nombre">Nombres :</label>
+          <input type="text" id="nombre" name="nombre" value="" required/>
+      </p>
+      <p>
+        <label for="apellido1">Apellido Paterno :</label>
+        <input type="text" id="apellido1" name="apellido1" value="" required/>
+      </p>
+
+      <p>
+        <label for="apellido2">Apellido Materno :</label>
+        <input type="text" id="apellido2" name="apellido2" value="" required/>
+      </p>
+
+    <p>
+      <label class="titulo" for="sexo">Sexo :</label>
+
+        <span>
+          <input type="radio" id="sexo" name="sexo" value="F">Femenino<br>
+          <input type="radio" id="sexo" name="sexo" value="M">Masculino<br>
+        </span>
+    </p>
+
+    <p>
+      <label for="direccion">Avenida, Calle, número : </label>
+      <input type="text" id="direccion" name="direccion" value="" required/>
+    </p>
+
+    <p>
+      <label for="distrito">Distrito :</label>
+      <input type="text" id="distrito" name="distrito" value="" required/>
+    </p>
+
+    <p>
+      <label for="provincia">PokeParada :</label>
+      <select id="provincia" name="provincia">
+            <option value=""></option>
+            <option value="provincia1">Provincia 1</option>
+            <option value="provincia2">Provincia 2</option>
+            <option value="provincia3">Provincia 3</option>
+      </select>
+    </p>
+
+    <p>
+      <label class="titulo" for="email">Correo electronico</label>
+      <input type="email" id="email" name="email" value="" required/>
+    </p>
+
+    <p>
+      <label for="telefonomovil">Móvil en formato 9999-99999 </label>
+      <input type="tel" id="telefonomovil" name="telefonomovil"
+            pattern='\d{4}[\-]\d{5}' value="" required/>
+    </p>
+
+    <p>
+      <input id="alta" type="submit" value="Registrar" />
+      <input id="limpiar" type="reset" value="Limpiar" />
+    </p>
+
+ </form>
+</section>
+
+<aside>
+  <p><video src="http://people.xiph.org/~maikmerten/demos/BigBuckBunny.ogv" width="320" height="240"  controls autoplay loop>
+	<div class="no-html5-video"><p>Este video solo funciona en Mozilla Firefox o Google Chrome.</div>
+  </p>
+</aside>
+
+</article>
+  <!-- Pie de página -->
+  <footer>
+      <p id="copyright">&copy; 2016 By Dark Side</p>
+  </footer> <!-- /pie de página -->
+
+  <script src="js/buscar.js" ></script>
+</body>
+</html>
