@@ -14,7 +14,7 @@ import java.util.List;
  * @author migue_000
  */
 public interface LoginIf {
-    public List<Pokemon> obtenerPokemones();
+    public List<Pokemon> obtenerPokemones(String tipo);
     public List<Tipo> obtenerTipos();
     public void insertarPokemon(Pokemon pok);
     public void borrarPokemon(int pos);

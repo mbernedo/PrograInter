@@ -23,23 +23,19 @@
     </head>
     <body>
         <div class="row">
-            <div class="col-md-4">
-                <p> Nombre </p>
-                <input type="text"/>
-            </div>
-            <div class="col-md-4">
-                <p> Universidad </p>
-                <input type="text"/>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <p> Tipo </p>
                 <select id="pokemones" name="pokemon">
-                <option value=""></option>
-                <% for (int i = 0; i < tipos.size(); i++) {
-                        Tipo tipo = (Tipo) tipos.get(i); %>
-                        <option value="<%= tipo.getTipo() %>"> <%= tipo.getTipo() %></option>
-                <% } %>
-            </select>
+                    <option value=""></option>
+                    <% for (int i = 0; i < tipos.size(); i++) {
+                        Tipo tipo = (Tipo) tipos.get(i);%>
+                    <option value="<%= tipo.getTipo()%>"><%= tipo.getTipo()%></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <br>
+                <button class="btn btn-primary" id="Filtrar"> Filtrar </button>
             </div>
         </div>
         <div style="margin-top: 55px">
@@ -48,19 +44,26 @@
             %>
             <div class="row">
                 <div class="col-md-3">
-                    <label> <%= pokemon.getNombre()%> </label>
+                    <input value="<%= pokemon.getNombre()%>" class="form-control" id="poke<%= pokemon.getId() %>" readonly="true" />
                 </div>
                 <div class="col-md-3">
-                    <label> <%= pokemon.getTipo().getTipo()%></label>
+                    <input value="<%= pokemon.getTipo().getTipo()%>" class="form-control poke<%= pokemon.getId()%>" readonly="true"/>
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-danger" id="<%= pokemon.getId()%>"> Eliminar </button>
+                    <a class="btn btn-primary eliminar" id="<%= pokemon.getId()%>" href="/PrograInter/pok?id=<%= pokemon.getId()%>"> Eliminar </a>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-warning" id="<%= pokemon.getId()%>"> Modificar </button>
+                <div>
+                    <div class="col-md-3">
+                        <a class="btn btn-primary modificar" style="display: none" id="m<%= pokemon.getId()%>">Modificar</a>
+                    </div>
+                </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-primary editar"  id="e<%= pokemon.getId()%>">Editar</a>
                 </div> 
             </div> 
             <% }%>
         </div>
+        <script src="jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.js" type="text/javascript"></script>
     </body>
 </html>

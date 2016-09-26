@@ -21,9 +21,9 @@ public class Test {
     public static void main(String[] args) {
         // TODO code application logic here
         LoginIf login = new LoginDAO();
-        List<Tipo> lista = login.obtenerTipos();
-        for (Tipo tipo : lista) {
-            System.out.println(tipo.getTipo());
+        List<Pokemon> lista = login.obtenerPokemones("Fuego");
+        for (Pokemon tipo : lista) {
+            System.out.println(tipo.getNombre());
         }
     }
     

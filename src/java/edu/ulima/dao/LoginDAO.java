@@ -51,15 +51,21 @@ public class LoginDAO implements LoginIf {
     }
 
     @Override
-    public List<Pokemon> obtenerPokemones() {
+    public List<Pokemon> obtenerPokemones(String combo) {
         List<Pokemon> lista = new ArrayList<>();
         String sql = "select p1.idPokemones, p1.nombre, p1.idTipo, p2.tipo from pokemones p1 join tipos p2 on p1.idTipo=p2.idTipo";
+        if(!combo.equals("")){
+            sql = sql + " where p2.tipo=?";
+        }
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Connection con = null;
         try {
             con = getConnection();
             stmt = con.prepareStatement(sql);
+            if(!combo.equals("")){
+                stmt.setString(1, combo);
+            }
             rs = stmt.executeQuery();
             while (rs.next()) {
                 int cod = rs.getInt(1);
@@ -108,8 +114,7 @@ public class LoginDAO implements LoginIf {
         }
         return listTipo;
     }
-    
-    
+
 
     @Override
     public void insertarPokemon(Pokemon pok) {

@@ -29,7 +29,13 @@ public class pokemonServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession ses = request.getSession(true);
         LoginIf login = new LoginDAO();
-        List<Pokemon> lista = login.obtenerPokemones();
+        List<Pokemon> lista;
+        String var = request.getParameter("tipo");
+        if (request.getParameter("tipo") == null) {
+            lista = login.obtenerPokemones("");
+        }else{
+            lista = login.obtenerPokemones(var);
+        }
         List<Tipo> lista2 = login.obtenerTipos();
         ses.setAttribute("pokemones", lista);
         ses.setAttribute("tipos", lista2);
@@ -37,7 +43,11 @@ public class pokemonServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher(rpta);
         rd.forward(request, response);
     }
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession ses = request.getSession(true);
+        LoginIf login = new LoginDAO();
+        
+    }
     /**
      * Returns a short description of the servlet.
      *
