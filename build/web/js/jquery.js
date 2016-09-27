@@ -11,7 +11,8 @@ $('#Filtrar').click(function () {
 });
 
 $(".editar").click(function () {
-    var id= $(this).attr("id").substring(1,2);
+    var idTot=$(this).attr("id")
+    var id= idTot.substring(1,idTot.length);
     $(".poke"+id).removeAttr("readonly");
     $(this).removeClass("modificar");
     $(this).removeClass("btn-primary");
@@ -22,7 +23,20 @@ $(".editar").click(function () {
 });
 
 $(".modificar").click(function(){
-    var id =$(this).attr("id").substring(1,2);
-    var nombre=$("#poke"+id).val();
-    window.location.href = "http://localhost:8090/PrograInter/pok?id=" +id+"&nombre="+nombre;
+    var idTot=$(this).attr("id")
+    var id= idTot.substring(1,idTot.length);
+    var nombre=$(".poke"+id).val();
+    window.location.href = "http://localhost:8090/PrograInter/mod?id=" +id+"&nombre="+nombre+"&accion=modificar";
+});
+
+$(".eliminar").click(function(){
+    var idTot=$(this).attr("id")
+    var id= idTot.substring(1,idTot.length);
+    window.location.href = "http://localhost:8090/PrograInter/mod?id="+id+"&accion=eliminar";
+});
+
+$("#Ingresar").click(function(){
+    var nombre = $("#nombrePokemon").val();
+    var idTipo = $("#pokemones option:selected").val();
+    window.location.href = "http://localhost:8090/PrograInter/mod?idTipo="+idTipo+"&nomPoke="+nombre+"&accion=ingresar";
 });

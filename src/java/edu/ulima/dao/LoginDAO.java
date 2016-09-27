@@ -96,7 +96,7 @@ public class LoginDAO implements LoginIf {
     public List<Tipo> obtenerTipos() {
         List<Tipo> listTipo = new ArrayList<>();
         Tipo tipo;
-        String sql = "SELECT tipo FROM tipos";
+        String sql = "SELECT * FROM tipos";
         PreparedStatement stmt = null;
         Connection con = null;
         ResultSet rs = null;
@@ -106,7 +106,9 @@ public class LoginDAO implements LoginIf {
             rs = stmt.executeQuery();
             while(rs.next()){
                 tipo = new Tipo();
-                String nomTipo = rs.getString(1);
+                int idTipo = rs.getInt(1);
+                String nomTipo = rs.getString(2);
+                tipo.setId(idTipo);
                 tipo.setTipo(nomTipo);
                 listTipo.add(tipo);
             }

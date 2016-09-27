@@ -44,29 +44,6 @@ public class pokemonServlet extends HttpServlet {
         rd.forward(request, response);
     }
     
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession ses = request.getSession(true);
-        LoginIf login = new LoginDAO();
-        String pos = request.getParameter("id");
-        int id = Integer.parseInt(pos);
-        String nombre = request.getParameter("nombre");
-        login.modificarPokemon(id, nombre);
-        List<Pokemon> lista;
-        String var = request.getParameter("tipo");
-        if (request.getParameter("tipo") == null) {
-            lista = login.obtenerPokemones("");
-        }else{
-            lista = login.obtenerPokemones(var);
-        }
-        List<Tipo> lista2 = login.obtenerTipos();
-        ses.setAttribute("pokemones", lista);
-        ses.setAttribute("tipos", lista2);
-        String rpta = "/index.jsp";
-        RequestDispatcher rd = request.getRequestDispatcher(rpta);
-        rd.forward(request, response);
-        
-    }
     /**
      * Returns a short description of the servlet.
      *

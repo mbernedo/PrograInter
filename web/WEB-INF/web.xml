@@ -4,9 +4,17 @@
         <servlet-name>pokemonServlet</servlet-name>
         <servlet-class>edu.ulima.servlet.pokemonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>modificarServlet</servlet-name>
+        <servlet-class>edu.ulima.servlet.modificarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>pokemonServlet</servlet-name>
         <url-pattern>/pok</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>modificarServlet</servlet-name>
+        <url-pattern>/mod</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
