@@ -24,5 +24,5 @@ $(".editar").click(function () {
 $(".modificar").click(function(){
     var id =$(this).attr("id").substring(1,2);
     var nombre=$("#poke"+id).val();
-    window.location.href = "http://localhost:8090/PrograInter/pok?id=" + id+"&nombre="+nombre;
+    window.location.href = "http://localhost:8090/PrograInter/pok?id=" +id+"&nombre="+nombre;
 });

@@ -44,7 +44,7 @@
             %>
             <div class="row">
                 <div class="col-md-3">
-                    <input value="<%= pokemon.getNombre()%>" class="form-control" id="poke<%= pokemon.getId() %>" readonly="true" />
+                    <input value="<%= pokemon.getNombre()%>" class="form-control poke<%= pokemon.getId() %>" readonly="true" />
                 </div>
                 <div class="col-md-3">
                     <input value="<%= pokemon.getTipo().getTipo()%>" class="form-control poke<%= pokemon.getId()%>" readonly="true"/>
