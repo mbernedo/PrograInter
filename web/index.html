@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="twitter-bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+        <link href="twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link href="twitter-bootstrap/css/tether.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="twitter-bootstrap/css/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="demo-card-square mdl-card mdl-shadow--2dp" id="cardLogin">
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Ingreso al sistema</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="usuario">
+                        <label class="mdl-textfield__label" for="usuario">Usuario</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="password" id="password">
+                        <label class="mdl-textfield__label" for="password">Contraseña</label>
+                    </div>
+                </form>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <button id="login" class="mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect col-xs-4">
+                    Ingresar
+                </button>
+                <button id="registrar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--primary col-xs-5 offset-xs-3">
+                    Registrarse
+                </button>
+            </div>
+        </div>
+        <script src="twitter-bootstrap/js/jquery.js" type="text/javascript"></script>
+        <script src="twitter-bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="twitter-bootstrap/js/tether.min.js" type="text/javascript"></script>
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script src="twitter-bootstrap/js/sweetalert2.min.js" type="text/javascript"></script>
+        <script src="js/cliente.js" type="text/javascript"></script>
+    </body>
+</html>
