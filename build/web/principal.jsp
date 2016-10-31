@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Practica 3 | Mi perfil</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href="twitter-bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -25,12 +25,12 @@
     <body>
         <div>
             <h1>Michi Game</h1>
-            <h4> <%= usuario%> </h4>
+            <h4 class="user"><%=usuario%></h4>
         </div>
         <div class="row">
             <div class="col-xs-6">
                 <label>Partidas </label>
-                <button>Nuevo</button>
+                <button class="btn btn-primary" id="btnNuevo">Nuevo</button>
                 <div>
                     <% for (int i = 0; i < juegos.size(); i++) {
                             Juego juego = (Juego) juegos.get(i); %>
@@ -55,6 +55,6 @@
         <script src="twitter-bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="twitter-bootstrap/js/tether.min.js" type="text/javascript"></script>
         <script src="twitter-bootstrap/js/sweetalert2.min.js" type="text/javascript"></script>
-        <script src="js/cliente.js" type="text/javascript"></script>
+        <script src="js/usuario.js" type="text/javascript"></script>
     </body>
 </html>

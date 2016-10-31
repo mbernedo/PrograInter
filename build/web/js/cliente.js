@@ -3,15 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function () {
-    var url = window.location.href;
-    if (url.search("modal") !== -1) {
-        $("#modal1").modal("hide");
-    } else {
-        $("#modal1").modal("show");
-    }
-
-});
 
 var URL = "http://localhost:8080/WebService/servicio/practica3/";
 
@@ -30,8 +21,9 @@ $("#login").click(function () {
         contentType: 'application/json',
         data: JSON.stringify(user),
         success: function (res) {
+            //0:login incorrecto, 1:login correcto
             if (res.cod === 1) {
-                window.location.href = "http://localhost:8080/WebService/juegos?user=" + res.usuario.usuario + "&modal=false";
+                window.location.href = "http://localhost:8080/WebService/juegos?user=" + res.usuario.usuario;
             } else {
                 swal(
                         'Credenciales incorrectas',
@@ -60,8 +52,9 @@ $("#registrar").click(function () {
         contentType: 'application/json',
         data: JSON.stringify(user),
         success: function (res) {
+            //0:registro incorrecto, 1:registro correcto, 2:usuario repetido
             if (res.cod === 1) {
-                window.location.href = "http://localhost:8080/WebService/juegos?user=" + res.usuario.usuario + "&modal=false";
+                window.location.href = "http://localhost:8080/WebService/juegos?user=" + res.usuario.usuario;
             } else if (res.cod === 2) {
                 swal({
                     title: '',

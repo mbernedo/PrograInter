@@ -152,8 +152,10 @@ public class ServiceDAO implements ServiceIF {
                 jugadores = new Juego();
                 String player1 = rs.getString(1);
                 String player2 = rs.getString(2);
+                int resultado = rs.getInt(3);
                 jugadores.setGamer1(player1);
                 jugadores.setGamer2(player2);
+                jugadores.setResultado(resultado);
                 juegos.add(jugadores);
             }
         } catch (SQLException ex) {

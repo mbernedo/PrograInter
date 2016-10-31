@@ -8,6 +8,10 @@
         <servlet-name>misjuegosServlet</servlet-name>
         <servlet-class>edu.ulima.servlet.misjuegosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getusuarioServlet</servlet-name>
+        <servlet-class>edu.ulima.servlet.getusuarioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>iniciarMichi</servlet-name>
         <url-pattern>/iniciar</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>misjuegosServlet</servlet-name>
         <url-pattern>/juegos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getusuarioServlet</servlet-name>
+        <url-pattern>/usuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

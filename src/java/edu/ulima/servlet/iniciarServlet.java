@@ -31,9 +31,12 @@ public class iniciarServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println("Error");
         } finally {
-            String rpta = "/index.html";
-            RequestDispatcher rd = request.getRequestDispatcher(rpta);
-            rd.forward(request, response);
+            String rpta1 = "/index.html";
+            String rpta2 = "/juego.jsp";
+            RequestDispatcher rd1 = request.getRequestDispatcher(rpta1);
+            RequestDispatcher rd2 = request.getRequestDispatcher(rpta2);
+            rd1.forward(request, response);
+            rd2.forward(request, response);
         }
     }
 

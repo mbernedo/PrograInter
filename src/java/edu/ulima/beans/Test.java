@@ -11,6 +11,7 @@ import edu.ulima.interfaces.ServiceIF;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -23,11 +24,14 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ServiceIF serv = new ServiceDAO();
-        List<Juego> lista = serv.getJuegos("chachi");
-        for (int i=0; i<lista.size(); i++) {
-            System.out.println(lista.get(i).getGamer1() + " 2: " + lista.get(i).getGamer2());
-        }
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("cod",1);
+        jsonObject.put("msg", "Esperando");
+        System.out.println(jsonObject);
+        JSONObject obj = (JSONObject) jsonObject;
+        String mensaje = (String) obj.get("msg");
+        int codigo = (int) obj.get("cod");
+        System.out.println(mensaje + codigo);
     }
     
 }
