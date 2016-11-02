@@ -29,43 +29,26 @@
                 </div>
                 <div class="col-xs-6 tablero">
                     <div class="row">
-                        <div class="col-xs-4 celda" id="celda1">
-                            X
-                        </div>
-                        <div class="col-xs-4 celda" id="celda2">
-                            X
-                        </div>
-                        <div class="col-xs-4 celda" id="celda3">
-                            X
-                        </div>
+                        <div class="col-xs-4 celda seleccionado" id="celda1"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda2"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda3"></div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-4 celda" id="celda4">
-                            O
-                        </div>
-                        <div class="col-xs-4 celda" id="celda5">
-                            O
-                        </div>
-                        <div class="col-xs-4 celda" id="celda6">
-                            X
-                        </div>
+                        <div class="col-xs-4 celda seleccionado" id="celda4"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda5"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda6"></div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-4 celda" id="celda7">
-                            X
-                        </div>
-                        <div class="col-xs-4 celda" id="celda8">
-                            X
-                        </div>
-                        <div class="col-xs-4 celda" id="celda9">
-                            X
-                        </div>
+                        <div class="col-xs-4 celda seleccionado" id="celda7"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda8"></div>
+                        <div class="col-xs-4 celda seleccionado" id="celda9"></div>
                     </div>
                 </div>
                 <div class="col-xs-6 datos">
                     <label>Jugador: </label>
-                    <label><%=usuario%></label>
-                    <p>Esperando</p>
+                    <label id="usuario"><%=usuario%></label>
+                    <p id="estado"></p>
+                    <p id="ganador"></p>
                     <button id="btnEnviar" class="btn btn-primary">Enviar</button>
                 </div>
             </div>

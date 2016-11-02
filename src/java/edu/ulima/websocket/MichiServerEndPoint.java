@@ -48,7 +48,7 @@ public class MichiServerEndPoint {
 
     @OnMessage
     public void onMessage(String message, Session userSession) throws ParseException {
-        System.out.println("Message Received: " + message);
+        /*System.out.println("Message Received: " + message);
         JSONParser parser = new JSONParser();
         JSONObject obj = (JSONObject) parser.parse(message);
         System.out.println(obj.get("cod"));
@@ -60,12 +60,23 @@ public class MichiServerEndPoint {
                 System.out.println("if");
             }else{
                 try {
-                    WaitingSession.getBasicRemote().sendText("Encontraste huevoncito");
+                    WaitingSession.getBasicRemote().sendText("Encontraste oponente");
                 } catch (IOException ex) {
                     Logger.getLogger(MichiServerEndPoint.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println("else");
             }
+        }*/
+        System.out.println("Message Received: " + message);
+        try {
+            for (Session session : userSession.getOpenSessions()) {
+                if (session.isOpen()) {
+                    session.getBasicRemote().sendText(message);
+                    System.out.println("Sending to " + session.getId());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(MichiServerEndPoint.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
