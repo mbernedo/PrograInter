@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/11/2016, 08:11:40 PM
+    Author     : migue_000
+*/
+html{
+    width: 4000px;
+}
+.celda{
+    border: solid 1px black;
+    width: 98px;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+.celda2{
+    width: 98px;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+.col{
+    display: inline-block;
+    width: 100px;
+    padding-top:  2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 10px;
+}
+input{
+    width: 96%;
+    height: 100%;
+}
+#imagen{
+    width: 80px;
+    height: 80px;
+}
+#modalSum{
+    background: top;
+}

@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/10/2016, 09:31:05 AM
+    Author     : mbernedo
+*/
+body{
+    background: slategray;
+}
+.largo{
+    width: 370px;
+    margin: auto;
+}
+.izquierda{
+    right: 0;
+}
+.ancho{
+    width: 100%;
+}
+.demo-card-square.mdl-card {
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 320px;
+    height: 50%;
+}
+.demo-card-square > .mdl-card__title {
+    color: #fff;
+    background:
+        url('') bottom right 15% no-repeat #46B6AC;
+}
+.mdl-textfield__input{
+    padding-bottom: 10px;
+}
