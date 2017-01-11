@@ -1,0 +1,35 @@
+// Miguel Bernedo / Diego Rojas 
+
+var pokemones = 
+[ 
+    {'id':1,'nombre':'Bulbasaur','tipo':'Grass','hp':45,'atk':49,'def':49,'sa':65,'sd':65,'spd':45},
+    {'id':2,'nombre':'Ivysaur','tipo':'Grass','hp':60,'atk':62,'def':63,'sa':80,'sd':80,'spd':60},
+    {'id':3,'nombre':'Venusaur','tipo':'Grass','hp':80,'atk':82,'def':83,'sa':100,'sd':100,'spd':80},
+    {'id':4,'nombre':'Charmander','tipo':'Fire','hp':39,'atk':52,'def':43,'sa':60,'sd':50,'spd':65},
+    {'id':5,'nombre':'Charmeleon','tipo':'Fire','hp':58,'atk':64,'def':58,'sa':80,'sd':65,'spd':80},
+    {'id':6,'nombre':'Charizard','tipo':'Fire','hp':78,'atk':84,'def':78,'sa':109,'sd':85,'spd':100},
+    {'id':7,'nombre':'Squirtle','tipo':'Water','hp':44,'atk':48,'def':65,'sa':60,'sd':54,'spd':43},
+    {'id':8,'nombre':'Wartortle','tipo':'Water','hp':59,'atk':63,'def':80,'sa':65,'sd':80,'spd':58},
+    {'id':9,'nombre':'Blastoise','tipo':'Water','hp':79,'atk':83,'def':100,'sa':85,'sd':105,'spd':78},
+    {'id':10,'nombre':'Caterpie','tipo':'Bug','hp':45,'atk':30,'def':35,'sa':20,'sd':20,'spd':45},
+    {'id':11,'nombre':'Metapod','tipo':'Bug','hp':50,'atk':20,'def':55,'sa':25,'sd':25,'spd':30},
+    {'id':12,'nombre':'Butterfree','tipo':'Bug','hp':60,'atk':45,'def':50,'sa':80,'sd':80,'spd':70},
+    {'id':13,'nombre':'Weedle','tipo':'Bug','hp':40,'atk':35,'def':30,'sa':20,'sd':20,'spd':50},
+    {'id':14,'nombre':'Kakuna','tipo':'Bug','hp':45,'atk':25,'def':50,'sa':25,'sd':25,'spd':35},
+    {'id':15,'nombre':'Beedrill','tipo':'Bug','hp':65,'atk':80,'def':40,'sa':40,'sd':80,'spd':75},
+    {'id':16,'nombre':'Pidgey','tipo':'Normal','hp':40,'atk':45,'def':40,'sa':35,'sd':35,'spd':56},
+    {'id':17,'nombre':'Pidgeotto','tipo':'Normal','hp':63,'atk':60,'def':55,'sa':50,'sd':50,'spd':71},
+    {'id':18,'nombre':'Pidgeot','tipo':'Normal','hp':83,'atk':80,'def':75,'sa':70,'sd':70,'spd':91},
+    {'id':19,'nombre':'Rattata','tipo':'Normal','hp':30,'atk':56,'def':35,'sa':25,'sd':35,'spd':72},
+    {'id':20,'nombre':'Raticate','tipo':'Normal','hp':55,'atk':81,'def':60,'sa':50,'sd':70,'spd':97},
+    {'id':21,'nombre':'Spearow','tipo':'Normal','hp':40,'atk':60,'def':30,'sa':31,'sd':31,'spd':70},
+    {'id':22,'nombre':'Fearow','tipo':'Normal','hp':65,'atk':90,'def':65,'sa':61,'sd':61,'spd':100},
+    {'id':23,'nombre':'Ekans','tipo':'Poison','hp':30,'atk':60,'def':44,'sa':40,'sd':54,'spd':55},
+    {'id':24,'nombre':'Arbok','tipo':'Poison','hp':60,'atk':85,'def':69,'sa':65,'sd':79,'spd':80},
+    {'id':25,'nombre':'Pikachu','tipo':'Electric','hp':35,'atk':55,'def':30,'sa':50,'sd':40,'spd':90},
+    {'id':26,'nombre':'Raichu','tipo':'Electric','hp':60,'atk':90,'def':55,'sa':90,'sd':80,'spd':100},
+    {'id':27,'nombre':'Sandshrew','tipo':'Ground','hp':50,'atk':75,'def':85,'sa':20,'sd':30,'spd':40},
+    {'id':28,'nombre':'Sandslash','tipo':'Ground','hp':75,'atk':100,'def':110,'sa':45,'sd':55,'spd':65},
+    {'id':29,'nombre':'Nidoran','tipo':'Poison','hp':55,'atk':47,'def':52,'sa':40,'sd':40,'spd':41},
+    {'id':30,'nombre':'Nidorina','tipo':'Poison','hp':70,'atk':62,'def':67,'sa':55,'sd':55,'spd':56}
+];

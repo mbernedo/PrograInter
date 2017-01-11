@@ -1,0 +1,32 @@
+
+.Water{
+    color: #0000FF;
+}
+
+.Fire{
+    color: #FF2A2A;
+}
+
+.Bug{
+    color: #C8AB37;
+}
+
+.Grass{
+    color: #008800;
+}
+
+.Poison{
+    color: #9955FF;
+}
+
+.Normal{
+    color: #552200;
+}
+
+.Electric{
+    color: #FFCC00;
+}
+
+.Ground{
+    color: #C87137;
+}
