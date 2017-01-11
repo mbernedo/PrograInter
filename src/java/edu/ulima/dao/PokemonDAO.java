@@ -1,0 +1,268 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.ulima.dao;
+
+import edu.ulima.bean.Pokemon;
+import edu.ulima.bean.Tipo;
+import edu.ulima.interfaces.PokemonIf;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+/**
+ *
+ * @author migue_000
+ */
+public class PokemonDAO implements PokemonIf {
+
+    private final String url = "jdbc:mysql://localhost:3306/db_pokemones_pc2";
+
+    private Connection getConnection() {
+        Connection con = null;
+
+        Properties prop = new Properties();
+        // Cargar las credenciales
+        prop.put("user", "root");
+        prop.put("password", "root");
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, prop);
+        } catch (ClassNotFoundException e) {
+            System.out.println("========================");
+            System.out.println("===> Revisa tu classpath <===");
+            System.out.println("========================");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("========================");
+            System.out.println("===> Revisa tus parametros de conexion <===");
+            System.out.println("========================");
+            e.printStackTrace();
+        }
+        return con;
+    }
+
+    @Override
+    public List<Pokemon> obtenerPokemones(String combo) {
+        List<Pokemon> lista = new ArrayList<>();
+        String sql = "select p1.id, p1.codigo_pokedex, p1.nombre, p1.hp, p1.tipo_id, p2.nombre from pokemones p1 join tipos p2 on p1.tipo_id=p2.id";
+        if (!combo.equals("")) {
+            sql = sql + " where p2.nombre=?";
+        }
+        sql = sql + " order by 1 desc";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Connection con = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            if (!combo.equals("")) {
+                stmt.setString(1, combo);
+            }
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                int cod = rs.getInt(2);
+                String nombre = rs.getString(3);
+                int hp = rs.getInt(4);
+                int idTipo = rs.getInt(5);
+                String nomTipo = rs.getString(6);
+                Pokemon poke = new Pokemon();
+                poke.setId(id);
+                poke.setCod_pokedex(cod);
+                poke.setNombre(nombre);
+                poke.setHp(hp);
+                poke.getTipo().setIdTipo(idTipo);
+                poke.getTipo().setNomTipo(nomTipo);
+                lista.add(poke);
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        } finally {
+            try {
+                stmt.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+            }
+        }
+        return lista;
+    }
+
+    @Override
+    public List<Tipo> obtenerTipos() {
+        List<Tipo> listTipo = new ArrayList<>();
+        Tipo tipo;
+        String sql = "SELECT * FROM tipos";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        ResultSet rs = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                tipo = new Tipo();
+                int idTipo = rs.getInt(1);
+                String nomTipo = rs.getString(2);
+                tipo.setIdTipo(idTipo);
+                tipo.setNomTipo(nomTipo);
+                listTipo.add(tipo);
+            }
+        } catch (Exception e) {
+        } finally {
+            try {
+                stmt.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+            }
+        }
+        return listTipo;
+
+    }
+
+    @Override
+    public void borrarPokemon(int id) {
+        String sql = "DELETE FROM pokemones where id=?";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            int cont = stmt.executeUpdate();
+            System.out.println("Cantidad de registros " + cont);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.toString());
+            }
+        }
+    }
+
+    @Override
+    public void insertarPokemon(Pokemon pok) {
+        String sql = "INSERT INTO pokemones (id, codigo_pokedex, nombre, hp, tipo_id) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, pok.getId());
+            stmt.setInt(2, pok.getCod_pokedex());
+            stmt.setString(3, pok.getNombre());
+            stmt.setInt(4, pok.getHp());
+            stmt.setInt(5, pok.getTipo().getIdTipo());
+            int rc = stmt.executeUpdate();
+            System.out.println("Cantidad de registros " + rc);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.toString());
+            }
+        }
+    }
+
+    @Override
+    public void modificarPokemon(int id, Pokemon pok) {
+        String sql = "UPDATE pokemones SET codigo_pokedex=?, nombre=?, hp=?, tipo_id=? where id=?";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, pok.getCod_pokedex());
+            stmt.setString(2, pok.getNombre());
+            stmt.setInt(3, pok.getHp());
+            stmt.setInt(4, pok.getTipo().getIdTipo());
+            stmt.setInt(5, id);
+            int rc = stmt.executeUpdate();
+            System.out.println("Cantidad de registros " + rc);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        } finally {
+            try {
+                stmt.close();
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println(ex.toString());
+            }
+        }
+    }
+
+    @Override
+    public Pokemon getPokemon(int id) {
+        Pokemon poke = new Pokemon();
+        String sql = "SELECT codigo_pokedex, nombre, hp, tipo_id FROM pokemones where id=?";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        ResultSet rs = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                poke.setCod_pokedex(rs.getInt(1));
+                poke.setNombre(rs.getString(2));
+                poke.setHp(rs.getInt(3));
+                poke.getTipo().setIdTipo(4);
+            }
+        } catch (Exception e) {
+        } finally {
+            try {
+                stmt.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+            }
+        }
+        return poke;
+
+    }
+
+    @Override
+    public List<Integer> getCodigo() {
+        List<Integer> codigos = new ArrayList<>();
+        String sql = "SELECT codigo_pokedex FROM pokemones";
+        PreparedStatement stmt = null;
+        Connection con = null;
+        ResultSet rs = null;
+        try {
+            con = getConnection();
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int codPoke = rs.getInt(1);
+                codigos.add(codPoke);
+            }
+        } catch (Exception e) {
+        } finally {
+            try {
+                stmt.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+            }
+        }
+        return codigos;
+
+    }
+}
